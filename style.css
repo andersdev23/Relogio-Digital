@@ -1,0 +1,79 @@
+   
+   /* Fonte do Google Fonts para estilo futurista */
+
+    @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+
+    /* Reset básico e modelo de caixa para facilitar o layout */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Estilização geral do corpo da página */
+    body {
+      background-color: black;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 2rem; /* Espaço entre o título e o relógio */
+      padding: 1rem;
+      font-family: 'Audiowide', sans-serif;
+    }
+
+    /* Estilização do título */
+    h1 {
+      color: white;
+      font-weight: 700;
+      font-size: 4rem; /* Fonte responsiva */
+      text-align: center;
+    }
+
+    /* Container que envolve as caixas de hora, minuto e segundo */
+    .container {
+      background-color: rgba(255, 255, 255, 0.062);
+      width: 100%;
+      max-width: 900px;
+      padding: 2.5rem;
+      border-radius: 10px;
+      box-shadow: 1px 1px 10px 5px rgba(82, 139, 224, 0.61);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap; /* Quebra para dispositivos pequenos */
+    }
+
+    /* Estilo base para cada caixa do relógio (hora, minuto, segundo) */
+    .boxHour,
+    .boxMinute,
+    .boxSecond {
+      flex: 1 1 30%; /* Flexível, mas ocupa cerca de 30% da linha */
+      min-width: 100px; /* Garante um tamanho mínimo */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0, 0.1);
+      backdrop-filter: blur(5px);
+      border-radius: 10px;
+      box-shadow: 1px 1px 10px 0.1px #00b4d873;
+      padding: 1rem;
+      font-size: clamp(2rem, 10vw, 6rem); /* Fonte responsiva */
+      color: #00b4d8;
+    }
+
+    /* Ajustes para telas pequenas como celulares */
+    @media (max-width: 600px) {
+      .container {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .boxHour,
+      .boxMinute,
+      .boxSecond {
+        width: 100%;
+      }
+    }
